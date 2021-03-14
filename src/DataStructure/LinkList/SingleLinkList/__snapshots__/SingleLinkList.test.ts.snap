@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SingleLinkList add should be correctly 1`] = `
+SingleLinkList {
+  "head": Node {
+    "data": 1,
+    "next": null,
+  },
+  "len": 1,
+}
+`;
+
+exports[`SingleLinkList add should be correctly 2`] = `
+SingleLinkList {
+  "head": Node {
+    "data": 1,
+    "next": Node {
+      "data": 2,
+      "next": null,
+    },
+  },
+  "len": 2,
+}
+`;
+
+exports[`SingleLinkList add should be correctly 3`] = `
+SingleLinkList {
+  "head": Node {
+    "data": 1,
+    "next": Node {
+      "data": 2,
+      "next": Node {
+        "data": 3,
+        "next": null,
+      },
+    },
+  },
+  "len": 3,
+}
+`;
