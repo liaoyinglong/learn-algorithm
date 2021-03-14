@@ -18,7 +18,7 @@ export class SequenceList<T> {
   }
 
   get(i: number) {
-    if (i < 1 || i > this.list.length) {
+    if (i < 0 || i > this.list.length) {
       return;
     }
     return this.list[i];

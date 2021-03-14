@@ -15,4 +15,13 @@ describe("SingleLinkList", () => {
     list.add(3);
     expect(list).toMatchSnapshot();
   });
+
+  it("get should be correctly ", () => {
+    list.add(1);
+    list.add(2);
+    list.add(3);
+
+    expect(list.get(0)).toMatchSnapshot();
+    expect(list.get(2)).toMatchSnapshot();
+  });
 });

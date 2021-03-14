@@ -21,6 +21,21 @@ export class SingleLinkList<T> {
     last.next = node;
     this.len++;
   }
+
+  get(target: number) {
+    if (target < 0 || target > this.len) {
+      return;
+    }
+    let i = 0;
+    let node = this.head!;
+    do {
+      if (i === target) {
+        return node;
+      }
+      i++;
+      node = node.next!;
+    } while (node);
+  }
 }
 
 class Node<T> {
