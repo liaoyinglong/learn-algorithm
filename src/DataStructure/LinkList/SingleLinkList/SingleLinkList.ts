@@ -6,20 +6,7 @@ export class SingleLinkList<T> {
   private head: Node<T> | null = null;
 
   add(item: T) {
-    const node = new Node(item);
-    if (!this.head) {
-      this.head = node;
-      this.len = 1;
-      return;
-    }
-
-    let last = this.head;
-
-    while (last.next) {
-      last = last.next;
-    }
-    last.next = node;
-    this.len++;
+    return this.inset(item, this.len);
   }
 
   get(targetIndex: number) {
