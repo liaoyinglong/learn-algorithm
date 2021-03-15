@@ -10,8 +10,13 @@ describe("SingleLinkList", () => {
     list.add("c");
   });
 
+  function expectLen(len: number) {
+    expect(list.length).toBe(len);
+  }
+
   it("add should be correctly", () => {
     expect(list).toMatchSnapshot();
+    expectLen(3);
   });
 
   it("get should be correctly ", () => {
@@ -34,22 +39,31 @@ describe("SingleLinkList", () => {
   it("inset should be correctly ", () => {
     list.inset("d", 0);
     expect(list.get(0)).toMatchSnapshot();
+    expectLen(4);
 
     list.inset("f", 1);
     expect(list.get(0)).toMatchSnapshot();
+    expectLen(5);
 
     list.inset("g", 1);
     expect(list.get(0)).toMatchSnapshot();
+    expectLen(6);
   });
   it("inset should return false", () => {
     expect(list.inset("g", 1111)).toBe(false);
+    expectLen(3);
   });
   it("remove should be correctly ", () => {
     list.remove(1);
     expect(list.get(0)).toMatchSnapshot();
+    expectLen(2);
+
     list.remove(1);
     expect(list.get(0)).toMatchSnapshot();
+    expectLen(1);
+
     list.remove(0);
     expect(list.get(0)).toMatchSnapshot();
+    expectLen(0);
   });
 });

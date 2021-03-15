@@ -5,6 +5,10 @@ export class SingleLinkList<T> {
   private len = 0;
   private head: Node<T> | null = null;
 
+  get length() {
+    return this.len;
+  }
+
   add(item: T) {
     return this.inset(item, this.len);
   }
