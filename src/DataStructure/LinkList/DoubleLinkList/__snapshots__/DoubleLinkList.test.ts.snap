@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SingleLinkList add should correctly 1`] = `
+DoubleLinkList {
+  "head": Node {
+    "data": "a",
+    "next": Node {
+      "data": "b",
+      "next": Node {
+        "data": "c",
+        "prev": [Circular],
+      },
+      "prev": [Circular],
+    },
+  },
+  "last": Node {
+    "data": "c",
+    "prev": Node {
+      "data": "b",
+      "next": [Circular],
+      "prev": Node {
+        "data": "a",
+        "next": [Circular],
+      },
+    },
+  },
+  "len": 3,
+}
+`;
