@@ -14,6 +14,21 @@ export class DoubleLinkList<T> {
     this.inset(item, this.len);
   }
 
+  get(targetIndex: number) {
+    targetIndex = Math.max(targetIndex, 0);
+    targetIndex = Math.min(targetIndex, this.len - 1);
+    let t = this.head;
+    let i = 0;
+    while (t) {
+      if (i === targetIndex) {
+        break;
+      }
+      i++;
+      t = t.next;
+    }
+    return t!;
+  }
+
   inset(item: T, targetIndex: number) {
     targetIndex = Math.max(targetIndex, 0);
     targetIndex = Math.min(targetIndex, this.len);
@@ -36,19 +51,11 @@ export class DoubleLinkList<T> {
       pendingNode.prev = this.last;
       this.last = this.last.next;
     } else {
-      let t = this.head;
-      let i = 1;
-      while (t) {
-        if (targetIndex === i) {
-          pendingNode.next = t.next;
-          t.next!.prev = pendingNode;
-          pendingNode.prev = t;
-          t.next = pendingNode;
-          break;
-        }
-        i++;
-        t = t.next!;
-      }
+      const t = this.get(targetIndex - 1);
+      pendingNode.next = t.next;
+      t.next!.prev = pendingNode;
+      pendingNode.prev = t;
+      t.next = pendingNode;
     }
     this.len++;
   }

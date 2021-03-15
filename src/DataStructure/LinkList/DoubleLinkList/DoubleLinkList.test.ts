@@ -15,6 +15,14 @@ describe("SingleLinkList", () => {
     expect(list.length).toBe(3);
   });
 
+  it("get should correctly", function () {
+    expect(list.get(-1).data).toBe("a");
+    expect(list.get(0).data).toBe("a");
+    expect(list.get(1).data).toBe("b");
+    expect(list.get(2).data).toBe("c");
+    expect(list.get(22).data).toBe("c");
+  });
+
   it("头插入 应该正确", function () {
     list.inset("0a", 0);
     expect(list).toMatchSnapshot();
