@@ -15,6 +15,9 @@ export class DoubleLinkList<T> {
   }
 
   inset(item: T, targetIndex: number) {
+    targetIndex = Math.max(targetIndex, 0);
+    targetIndex = Math.min(targetIndex, this.len);
+
     const pendingNode = new Node(item);
     if (!this.head) {
       this.head = pendingNode;
@@ -28,10 +31,24 @@ export class DoubleLinkList<T> {
       this.head.prev = pendingNode;
       this.head = pendingNode;
     } else if (targetIndex === this.len) {
-      // 未插入
+      // 尾插入
       this.last.next = pendingNode;
       pendingNode.prev = this.last;
       this.last = this.last.next;
+    } else {
+      let t = this.head;
+      let i = 1;
+      while (t) {
+        if (targetIndex === i) {
+          pendingNode.next = t.next;
+          t.next!.prev = pendingNode;
+          pendingNode.prev = t;
+          t.next = pendingNode;
+          break;
+        }
+        i++;
+        t = t.next!;
+      }
     }
     this.len++;
   }

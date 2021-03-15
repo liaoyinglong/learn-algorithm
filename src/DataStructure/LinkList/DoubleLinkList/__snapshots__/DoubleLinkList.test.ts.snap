@@ -63,3 +63,83 @@ DoubleLinkList {
   "len": 4,
 }
 `;
+
+exports[`SingleLinkList 指定index插入 1`] = `
+DoubleLinkList {
+  "head": Node {
+    "data": "a",
+    "next": Node {
+      "data": "1a",
+      "next": Node {
+        "data": "b",
+        "next": Node {
+          "data": "c",
+          "prev": [Circular],
+        },
+        "prev": [Circular],
+      },
+      "prev": [Circular],
+    },
+  },
+  "last": Node {
+    "data": "c",
+    "prev": Node {
+      "data": "b",
+      "next": [Circular],
+      "prev": Node {
+        "data": "1a",
+        "next": [Circular],
+        "prev": Node {
+          "data": "a",
+          "next": [Circular],
+        },
+      },
+    },
+  },
+  "len": 4,
+}
+`;
+
+exports[`SingleLinkList 指定index插入 2`] = `
+DoubleLinkList {
+  "head": Node {
+    "data": "a",
+    "next": Node {
+      "data": "1a",
+      "next": Node {
+        "data": "0b",
+        "next": Node {
+          "data": "b",
+          "next": Node {
+            "data": "c",
+            "prev": [Circular],
+          },
+          "prev": [Circular],
+        },
+        "prev": [Circular],
+      },
+      "prev": [Circular],
+    },
+  },
+  "last": Node {
+    "data": "c",
+    "prev": Node {
+      "data": "b",
+      "next": [Circular],
+      "prev": Node {
+        "data": "0b",
+        "next": [Circular],
+        "prev": Node {
+          "data": "1a",
+          "next": [Circular],
+          "prev": Node {
+            "data": "a",
+            "next": [Circular],
+          },
+        },
+      },
+    },
+  },
+  "len": 5,
+}
+`;

@@ -19,4 +19,11 @@ describe("SingleLinkList", () => {
     list.inset("0a", 0);
     expect(list).toMatchSnapshot();
   });
+
+  it("指定index插入", function () {
+    list.inset("1a", 1);
+    expect(list).toMatchSnapshot();
+    list.inset("0b", 2);
+    expect(list).toMatchSnapshot();
+  });
 });
