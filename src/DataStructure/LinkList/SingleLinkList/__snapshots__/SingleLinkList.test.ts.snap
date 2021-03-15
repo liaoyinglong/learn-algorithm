@@ -3,34 +3,11 @@
 exports[`SingleLinkList add should be correctly 1`] = `
 SingleLinkList {
   "head": Node {
-    "data": 1,
-    "next": null,
-  },
-  "len": 1,
-}
-`;
-
-exports[`SingleLinkList add should be correctly 2`] = `
-SingleLinkList {
-  "head": Node {
-    "data": 1,
+    "data": "a",
     "next": Node {
-      "data": 2,
-      "next": null,
-    },
-  },
-  "len": 2,
-}
-`;
-
-exports[`SingleLinkList add should be correctly 3`] = `
-SingleLinkList {
-  "head": Node {
-    "data": 1,
-    "next": Node {
-      "data": 2,
+      "data": "b",
       "next": Node {
-        "data": 3,
+        "data": "c",
         "next": null,
       },
     },
@@ -41,11 +18,11 @@ SingleLinkList {
 
 exports[`SingleLinkList get should be correctly  1`] = `
 Node {
-  "data": 1,
+  "data": "a",
   "next": Node {
-    "data": 2,
+    "data": "b",
     "next": Node {
-      "data": 3,
+      "data": "c",
       "next": null,
     },
   },
@@ -54,7 +31,7 @@ Node {
 
 exports[`SingleLinkList get should be correctly  2`] = `
 Node {
-  "data": 3,
+  "data": "c",
   "next": null,
 }
 `;

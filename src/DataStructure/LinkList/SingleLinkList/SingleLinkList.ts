@@ -22,14 +22,14 @@ export class SingleLinkList<T> {
     this.len++;
   }
 
-  get(target: number) {
-    if (target < 0 || target > this.len) {
+  get(targetIndex: number) {
+    if (targetIndex < 0 || targetIndex > this.len) {
       return;
     }
     let i = 0;
     let node = this.head!;
     do {
-      if (i === target) {
+      if (i === targetIndex) {
         return node;
       }
       i++;
