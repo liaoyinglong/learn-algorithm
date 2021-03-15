@@ -42,29 +42,43 @@ export class SingleLinkList<T> {
     return this.indexOf(item) !== -1;
   }
 
-  inset(item: T, targetIndex = 0) {
+  /**
+   *
+   * @param item 待插入的元素
+   * @param targetIndex 插入后的index
+   * @description 需要对target-i位置上的元素进行操作
+   */
+  inset(item: T, targetIndex: number) {
     const pendingNode = new Node(item);
-    let currentNode = this.head;
     if (targetIndex === 0) {
-      pendingNode.next = currentNode;
+      pendingNode.next = this.head;
       this.head = pendingNode;
       this.len++;
       return true;
     }
 
+    const t = this.get(targetIndex - 1);
+    if (t) {
+      pendingNode.next = t.next;
+      t.next = pendingNode;
+      this.len++;
+    }
+    return false;
+  }
+
+  remove(targetIndex: number) {
+    if (targetIndex === 0) {
+      this.head = this.head?.next ?? null;
+      this.len--;
+      return true;
+    }
+
+    let currentNode = this.head;
     let i = 1;
     while (currentNode) {
       if (i === targetIndex) {
-        const preNext = currentNode.next;
-        currentNode.next = pendingNode;
-        pendingNode.next = preNext;
-        this.len++;
-        return true;
       }
-      i++;
-      currentNode = currentNode.next;
     }
-    return false;
   }
 }
 
