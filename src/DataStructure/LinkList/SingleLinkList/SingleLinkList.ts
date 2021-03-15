@@ -54,6 +54,31 @@ export class SingleLinkList<T> {
   has(item: T) {
     return this.indexOf(item) !== -1;
   }
+
+  inset(item: T, targetIndex = 0) {
+    const pendingNode = new Node(item);
+    let currentNode = this.head;
+    if (targetIndex === 0) {
+      pendingNode.next = currentNode;
+      this.head = pendingNode;
+      this.len++;
+      return true;
+    }
+
+    let i = 1;
+    while (currentNode) {
+      if (i === targetIndex) {
+        const preNext = currentNode.next;
+        currentNode.next = pendingNode;
+        pendingNode.next = preNext;
+        this.len++;
+        return true;
+      }
+      i++;
+      currentNode = currentNode.next;
+    }
+    return false;
+  }
 }
 
 class Node<T> {

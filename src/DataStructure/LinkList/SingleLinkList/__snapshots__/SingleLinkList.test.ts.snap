@@ -35,3 +35,60 @@ Node {
   "next": null,
 }
 `;
+
+exports[`SingleLinkList inset should be correctly  1`] = `
+Node {
+  "data": "d",
+  "next": Node {
+    "data": "a",
+    "next": Node {
+      "data": "b",
+      "next": Node {
+        "data": "c",
+        "next": null,
+      },
+    },
+  },
+}
+`;
+
+exports[`SingleLinkList inset should be correctly  2`] = `
+Node {
+  "data": "d",
+  "next": Node {
+    "data": "f",
+    "next": Node {
+      "data": "a",
+      "next": Node {
+        "data": "b",
+        "next": Node {
+          "data": "c",
+          "next": null,
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`SingleLinkList inset should be correctly  3`] = `
+Node {
+  "data": "d",
+  "next": Node {
+    "data": "g",
+    "next": Node {
+      "data": "f",
+      "next": Node {
+        "data": "a",
+        "next": Node {
+          "data": "b",
+          "next": Node {
+            "data": "c",
+            "next": null,
+          },
+        },
+      },
+    },
+  },
+}
+`;

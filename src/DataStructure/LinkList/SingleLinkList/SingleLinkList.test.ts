@@ -31,4 +31,14 @@ describe("SingleLinkList", () => {
     expect(list.has("c")).toBe(true);
     expect(list.has("d")).toBe(false);
   });
+  it("inset should be correctly ", () => {
+    list.inset("d", 0);
+    expect(list.get(0)).toMatchSnapshot();
+
+    list.inset("f", 1);
+    expect(list.get(0)).toMatchSnapshot();
+
+    list.inset("g", 1);
+    expect(list.get(0)).toMatchSnapshot();
+  });
 });
