@@ -62,6 +62,7 @@ export class SingleLinkList<T> {
       pendingNode.next = t.next;
       t.next = pendingNode;
       this.len++;
+      return true;
     }
     return false;
   }
@@ -73,12 +74,13 @@ export class SingleLinkList<T> {
       return true;
     }
 
-    let currentNode = this.head;
-    let i = 1;
-    while (currentNode) {
-      if (i === targetIndex) {
-      }
+    const t = this.get(targetIndex - 1);
+    if (t) {
+      t.next = t.next?.next ?? null;
+      this.len--;
+      return true;
     }
+    return false;
   }
 }
 

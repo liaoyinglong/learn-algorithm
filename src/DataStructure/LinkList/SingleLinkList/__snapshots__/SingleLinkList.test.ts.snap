@@ -92,3 +92,22 @@ Node {
   },
 }
 `;
+
+exports[`SingleLinkList remove should be correctly  1`] = `
+Node {
+  "data": "a",
+  "next": Node {
+    "data": "c",
+    "next": null,
+  },
+}
+`;
+
+exports[`SingleLinkList remove should be correctly  2`] = `
+Node {
+  "data": "a",
+  "next": null,
+}
+`;
+
+exports[`SingleLinkList remove should be correctly  3`] = `null`;
