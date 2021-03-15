@@ -43,10 +43,9 @@ export class SingleLinkList<T> {
   }
 
   /**
-   *
    * @param item 待插入的元素
    * @param targetIndex 插入后的index
-   * @description 需要对target-i位置上的元素进行操作
+   * @description 需要对target-1位置上的元素进行操作
    */
   inset(item: T, targetIndex: number) {
     const pendingNode = new Node(item);
@@ -66,7 +65,10 @@ export class SingleLinkList<T> {
     }
     return false;
   }
-
+  /**
+   * @param targetIndex pending to remove index
+   * @description 需要对target-1位置上的元素进行操作
+   */
   remove(targetIndex: number) {
     if (targetIndex === 0) {
       this.head = this.head?.next ?? null;
