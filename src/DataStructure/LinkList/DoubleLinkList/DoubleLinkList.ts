@@ -22,7 +22,13 @@ export class DoubleLinkList<T> {
       this.last = pendingNode;
       this.head.next = this.last;
       this.last.prev = this.head;
+    } else if (targetIndex === 0) {
+      // 头插入
+      pendingNode.next = this.head;
+      this.head.prev = pendingNode;
+      this.head = pendingNode;
     } else if (targetIndex === this.len) {
+      // 未插入
       this.last.next = pendingNode;
       pendingNode.prev = this.last;
       this.last = this.last.next;

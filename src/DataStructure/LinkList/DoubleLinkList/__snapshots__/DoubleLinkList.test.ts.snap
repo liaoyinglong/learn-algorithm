@@ -27,3 +27,39 @@ DoubleLinkList {
   "len": 3,
 }
 `;
+
+exports[`SingleLinkList 头插入 应该正确 1`] = `
+DoubleLinkList {
+  "head": Node {
+    "data": "0a",
+    "next": Node {
+      "data": "a",
+      "next": Node {
+        "data": "b",
+        "next": Node {
+          "data": "c",
+          "prev": [Circular],
+        },
+        "prev": [Circular],
+      },
+      "prev": [Circular],
+    },
+  },
+  "last": Node {
+    "data": "c",
+    "prev": Node {
+      "data": "b",
+      "next": [Circular],
+      "prev": Node {
+        "data": "a",
+        "next": [Circular],
+        "prev": Node {
+          "data": "0a",
+          "next": [Circular],
+        },
+      },
+    },
+  },
+  "len": 4,
+}
+`;

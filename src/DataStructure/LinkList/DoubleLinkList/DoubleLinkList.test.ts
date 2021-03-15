@@ -14,4 +14,9 @@ describe("SingleLinkList", () => {
     expect(list).toMatchSnapshot();
     expect(list.length).toBe(3);
   });
+
+  it("头插入 应该正确", function () {
+    list.inset("0a", 0);
+    expect(list).toMatchSnapshot();
+  });
 });
