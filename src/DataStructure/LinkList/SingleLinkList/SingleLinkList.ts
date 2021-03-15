@@ -50,6 +50,10 @@ export class SingleLinkList<T> {
     }
     return -1;
   }
+
+  has(item: T) {
+    return this.indexOf(item) !== -1;
+  }
 }
 
 class Node<T> {

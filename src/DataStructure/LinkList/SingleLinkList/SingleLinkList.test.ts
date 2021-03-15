@@ -25,4 +25,10 @@ describe("SingleLinkList", () => {
     expect(list.indexOf("c")).toBe(2);
     expect(list.indexOf("d")).toBe(-1);
   });
+  it("has should be correctly ", () => {
+    expect(list.has("a")).toBe(true);
+    expect(list.has("b")).toBe(true);
+    expect(list.has("c")).toBe(true);
+    expect(list.has("d")).toBe(false);
+  });
 });
