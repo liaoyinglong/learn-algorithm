@@ -36,12 +36,24 @@ export class SingleLinkList<T> {
       node = node.next!;
     } while (node);
   }
+
+  indexOf(item: T) {
+    let node = this.head;
+    let i = 0;
+
+    while (node) {
+      if (node.data === item) {
+        return i;
+      }
+      node = node.next;
+      i++;
+    }
+    return -1;
+  }
 }
 
 class Node<T> {
-  next: null | Node<T>;
+  next: null | Node<T> = null;
 
-  constructor(public data: T) {
-    this.next = null;
-  }
+  constructor(public data: T) {}
 }
