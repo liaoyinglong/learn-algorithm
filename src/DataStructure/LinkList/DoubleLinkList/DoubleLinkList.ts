@@ -59,6 +59,40 @@ export class DoubleLinkList<T> {
     }
     this.len++;
   }
+
+  remove(targetIndex: number) {
+    targetIndex = Math.max(targetIndex, 0);
+    targetIndex = Math.min(targetIndex, this.len - 1);
+
+    if (targetIndex === 0) {
+      if (this.head) {
+        const oldHead = this.head;
+        const newHead = this.head.next;
+        if (newHead) {
+          newHead.prev = void 0;
+        }
+        this.head = newHead;
+        oldHead.next = void 0;
+      }
+    } else if (targetIndex === this.len - 1) {
+      const oldLast = this.last;
+      const newLast = this.last?.prev;
+      if (oldLast) {
+        oldLast.prev = void 0;
+      }
+      if (newLast) {
+        newLast.next = void 0;
+      }
+      this.last = newLast;
+    } else {
+      const t = this.get(targetIndex - 1);
+      t.next = t.next?.next;
+      if (t.next) {
+        t.next.prev = t;
+      }
+    }
+    this.len--;
+  }
 }
 
 class Node<T> {

@@ -28,6 +28,72 @@ DoubleLinkList {
 }
 `;
 
+exports[`SingleLinkList remove should correctly 1`] = `
+DoubleLinkList {
+  "head": Node {
+    "data": "a",
+    "next": Node {
+      "data": "c",
+      "next": Node {
+        "data": "d",
+        "prev": [Circular],
+      },
+      "prev": [Circular],
+    },
+  },
+  "last": Node {
+    "data": "d",
+    "prev": Node {
+      "data": "c",
+      "next": [Circular],
+      "prev": Node {
+        "data": "a",
+        "next": [Circular],
+      },
+    },
+  },
+  "len": 3,
+}
+`;
+
+exports[`SingleLinkList remove should correctly 2`] = `
+DoubleLinkList {
+  "head": Node {
+    "data": "a",
+    "next": Node {
+      "data": "c",
+      "next": undefined,
+      "prev": [Circular],
+    },
+  },
+  "last": Node {
+    "data": "c",
+    "next": undefined,
+    "prev": Node {
+      "data": "a",
+      "next": [Circular],
+    },
+  },
+  "len": 2,
+}
+`;
+
+exports[`SingleLinkList remove should correctly 3`] = `
+DoubleLinkList {
+  "head": Node {
+    "data": "c",
+    "next": undefined,
+    "prev": undefined,
+  },
+  "last": Node {
+    "data": "c",
+    "next": undefined,
+    "prev": undefined,
+  },
+  "len": 1,
+}
+`;
+
 exports[`SingleLinkList 头插入 应该正确 1`] = `
 DoubleLinkList {
   "head": Node {
