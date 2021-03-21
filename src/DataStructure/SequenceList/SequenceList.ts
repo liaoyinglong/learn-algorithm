@@ -1,7 +1,7 @@
 /**
  * 顺序表
  */
-export class SequenceList<T> {
+export class SequenceList<T = number> {
   private nextIndex: number;
 
   constructor(private list: T[] = []) {
