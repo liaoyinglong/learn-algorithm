@@ -4,10 +4,7 @@ describe("SingleLinkList", () => {
   let list: SingleLinkList<number | string>;
 
   beforeEach(() => {
-    list = new SingleLinkList<number | string>();
-    list.add("a");
-    list.add("b");
-    list.add("c");
+    list = SingleLinkList.create(["a", "b", "c"]);
   });
 
   function expectLen(len: number) {

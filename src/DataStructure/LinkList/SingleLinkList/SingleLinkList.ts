@@ -88,6 +88,14 @@ export class SingleLinkList<T> {
     }
     return false;
   }
+
+  static create<T = number>(arr: T[]) {
+    const res = new SingleLinkList<T>();
+    arr.forEach((item) => {
+      res.add(item);
+    });
+    return res;
+  }
 }
 
 class Node<T> {
