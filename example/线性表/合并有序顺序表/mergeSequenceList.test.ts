@@ -35,4 +35,20 @@ describe("合并有序顺序表", () => {
       30,
     ]);
   });
+
+  it("l1 和 l2 中有相同的元素", () => {
+    const l1 = new SequenceList([2, 6, 18, 20]);
+    const l2 = new SequenceList([2, 6, 15, 20]);
+
+    expect(mergeSequenceList(l1, l2).getList()).toEqual([
+      2,
+      2,
+      6,
+      6,
+      15,
+      18,
+      20,
+      20,
+    ]);
+  });
 });

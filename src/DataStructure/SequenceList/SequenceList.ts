@@ -8,6 +8,10 @@ export class SequenceList<T = number> {
     this.nextIndex = this.list.length;
   }
 
+  get length() {
+    return this.list.length;
+  }
+
   getList() {
     return this.list;
   }
