@@ -1,3 +1,9 @@
+class Node<T> {
+  next: null | Node<T> = null;
+
+  constructor(public data: T) {}
+}
+
 /**
  * 单列表
  */
@@ -96,10 +102,4 @@ export class SingleLinkList<T> {
     });
     return res;
   }
-}
-
-class Node<T> {
-  next: null | Node<T> = null;
-
-  constructor(public data: T) {}
 }
