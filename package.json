@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "liaoyinglong <vigossliao@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:change": "jest --onlyChanged"
+  },
   "devDependencies": {
     "@swc-node/jest": "^1.1.1",
     "@types/jest": "^26.0.20",
