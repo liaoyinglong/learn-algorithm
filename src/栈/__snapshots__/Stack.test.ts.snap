@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stack clear method 1`] = `
+Stack {
+  "items": Array [],
+}
+`;
+
+exports[`Stack pop method 1`] = `
+Stack {
+  "items": Array [
+    "a",
+    "b",
+  ],
+}
+`;
