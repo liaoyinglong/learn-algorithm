@@ -1,6 +1,20 @@
-module.exports = {
-  // preset: "ts-jest",
-  transform: {
+let enableDebugger = (() => {
+  const { NODE_OPTIONS } = process.env;
+  // NODE_OPTIONS: "--require C:\\Users\\long8\\AppData\\Local\\Temp\\debugConnector.211.7142.14.js",
+  return !!NODE_OPTIONS && NODE_OPTIONS.includes("debug");
+})();
+
+const config = {
+  testEnvironment: "node",
+  moduleNameMapper: {
+    "^src/(.*)$": "<rootDir>/src/$1",
+  },
+};
+
+if (enableDebugger) {
+  config.preset = "ts-jest";
+} else {
+  config.transform = {
     "^.+\\.(t|j)sx?$": [
       "@swc-node/jest",
       {
@@ -11,9 +25,7 @@ module.exports = {
         sourcemap: true,
       },
     ],
-  },
-  testEnvironment: "node",
-  moduleNameMapper: {
-    "^src/(.*)$": "<rootDir>/src/$1",
-  },
-};
+  };
+}
+
+module.exports = config;
