@@ -1,4 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Stack > clear method 1`] = `
+Stack {
+  "items": [],
+}
+`;
+
+exports[`Stack > pop method 1`] = `
+Stack {
+  "items": [
+    "a",
+    "b",
+  ],
+}
+`;
 
 exports[`Stack clear method 1`] = `
 Stack {
